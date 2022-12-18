@@ -70,6 +70,11 @@ export default function Home() {
     // const storedNotes=localStorage.getItem("notes")
   }, [notes]);
 
+  // NB: I dey use the "activeNoteId" variable to select the correct note for deletion
+  const deleteNote = () => {
+    notes.splice(activeNoteId, 1);
+    setNotes([...notes]);
+  };
   return (
     <div className={styles.container}>
       <Head>
